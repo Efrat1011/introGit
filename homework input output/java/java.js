@@ -18,14 +18,14 @@ let surak1 = prompt("Қазақстан тәуелсіздігін қашан а
 let surak2 = prompt("Қай қалада оқып жатырсыз?(Almaty + 1 / Басқасы -1)")
 let score = 0
 if(surak1== 1991  ){
-    score + +
+    score ++
 }  
 
 if(surak2=="Almaty"){
-    score + +
+    score ++
 }
     if(score==0){
         alert("Сізге ұпай қосылмады"  )
 } else{
-    alert("Siz eki upay zhynadynyz: 2"  )
+    alert("Сізге: "+score+ "ұпай қосылады"  )
 }
