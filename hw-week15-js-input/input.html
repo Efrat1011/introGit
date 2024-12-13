@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="inputcss/input.css">
+</head>
+<body>
+    <h1>ACS-ке анонимді пікір қалдыру формасы</h1>
+  <form id="feedbackForm">
+    <label for="groupSelect">Тобыңыз:</label>
+    <select id="groupSelect">
+      <option value="">Таңдаңыз</option>
+      <option value="24/2">24/2</option>
+      <option value="24/4">24/4</option>
+      <option value="24/6">24/6</option>
+    </select>
+
+    <label for="textarea">Оқу орталығы қысқаша екі сөзбен:</label>
+    <textarea id="textarea" rows="4" placeholder="Максималды ұзындығы: 15"></textarea>
+    <p id="commentMessage" class="error"></p>
+
+    <label for="rating">Орталықты 0-10 арасында бағалаңыз:</label>
+    <input type="range" id="rating" min="0" max="10" value="0">
+    <div class="slider-value">Мәні: <span id="ratingValue">0</span></div>
+
+    <button type="submit" class="btn-submit">Жіберу</button>
+    <p id="formMessage"></p>
+  </form>
+
+
+   
+
+
+    <script src="js/input.js"></script>
+</body>
+</html>
+
+
