@@ -1,57 +1,43 @@
-// function fetchdata(url) {
-//     return new Promise((resolve,reject) =>{
-//         fetch(url).then(response=>{
-//             if(response.ok){
-//                 resolve(response.json())
-//             }else{
-//                 reject(new Error("Aqparattardy alu mumkin bolmady!"))
-//             }
-//         })
+function fetchdata(url) {
+    return new Promise((resolve,reject) =>{
+        fetch(url).then(response=>{
+            if(response.ok){
+                resolve(response.json())
+            }else{
+                reject(new Error("Aqparattardy alu mumkin bolmady!"))
+            }
+        })
        
-//     })
+    })
     
-// }
-// fetchdata('https://jsonplaceholder.typicode.com/todos').then((response)=>{
-// response.forEach((item) => {
-//     console.log(item.userTd);
-    
-//  })
-  // Деректерді алу функциясы
-  async function fetchUserData(url) {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return await response.json();
-    } catch (error) {
-        console.error("Қате орын алды!", error);
-        return [];
-    }
 }
+fetchdata(' https://jsonplaceholder.typicode.com/users ').then((otvet)=>{
+    displayData(otvet)
+ }).catch(qate=>{
+     console.log(qate.toString());
+    
+ })
 
- // Деректерді көрсету функциясы
- function displayUsers(users) {
-    const container = document.getElementById('users-container');
-    container.innerHTML = '';
+ function displayData(massiv) {
+    console.log(massiv);
+    let qorap = document.querySelector('.qorap')
 
-    users.forEach(user => {
-        const userBlock = document.createElement('div');
-        userBlock.className = 'user-block';
-        userBlock.innerHTML = `
-            <p><strong>Қолданушы аты:</strong> ${user.name}</p>
-            <p><strong>Email:</strong> ${user.email}</p>
-        `;
-        container.appendChild(userBlock);
+    massiv.forEach(element => {
+        let divElement = document.createElement('div')
+        let name = document.createElement('h2')
+        let paragraph = document.createElement('p')
+
+        divElement.appendChild(name)
+        divElement.appendChild(paragraph)
+
+        name.textContent = element.name
+        paragraph.textContent = element.email
+
+        qorap.appendChild(divElement)
+        
+        divElement.className = "div"
+        name.className = "name"
+        paragraph.className = "email"
     });
-}
-
-// Негізгі функция
-async function main() {
-    const apiUrl = 'https://jsonplaceholder.typicode.com/users';
-    const users = await fetchUserData(apiUrl);
-    displayUsers(users);
-}
-
-// Функцияны шақыру
-main();
+    
+ }

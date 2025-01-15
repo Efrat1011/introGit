@@ -1,13 +1,22 @@
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+.div{
+    background-color: rgb(234, 230, 230);
+    width: 350px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition-duration: 1s;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    left: 500px;
+    
 }
-.user-block {
-    background-color: #f0f0f0;
-    color: #2b04ef;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.div:hover{
+    opacity: 65;
+    transform: scale(0.95);
+    background-color: rgba(65, 247, 80, 0.678);
+}
+.name{
+    color: rgba(53, 53, 192, 0.751);
+}
+.email{
+    color: rgba(131, 8, 247, 0.653);
 }
