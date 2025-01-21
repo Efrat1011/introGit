@@ -4,7 +4,7 @@ document.getElementById("startBtn").addEventListener("click", () => {
     clearInterval(countdownInterval);
 
     const message = document.getElementById("message");
-    let timeLeft = 5;
+    let timeLeft = 15;
     message.textContent = `Хабарлама аяқталуына ${timeLeft}`;
 
     countdownInterval = setInterval(() => {
