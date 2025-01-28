@@ -1,6 +1,6 @@
 async function fetchData() {
     try {
-      const response = await fetch('https://67873274c4a42c916105d2fe.mockapi.io/api/onlineduken/users');
+      const response = await fetch('https://jsonplaceholder.typicode.com/users');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
